@@ -20,17 +20,23 @@
 
         .main{max-width:1400px;margin:0 auto;padding:30px 40px}
 
+        /* Tabs */
+        .tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+        .tab{padding:10px 24px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-muted);border-radius:10px;cursor:pointer;font-size:14px;font-weight:600;transition:.3s}
+        .tab:hover{border-color:var(--accent);color:var(--text)}
+        .tab.active{background:var(--highlight);border-color:var(--highlight);color:white}
+        .tab-content{display:none}.tab-content.active{display:block}
+
+        /* Forms */
         .form-section{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:30px}
         .form-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:28px;transition:.3s}
         .form-card:hover{border-color:var(--accent);box-shadow:0 8px 32px rgba(0,0,0,.3)}
         .form-card-header{display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
         .form-card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
-        .icon-v{background:rgba(233,69,96,.15)}.icon-f{background:rgba(0,184,148,.15)}.icon-i{background:rgba(253,203,110,.15)}.icon-m{background:rgba(15,52,96,.3)}.icon-s{background:rgba(162,155,254,.15)}.icon-eye{background:rgba(116,185,255,.15)}
-        .form-card-title{font-size:16px;font-weight:600}
-        .form-card-sub{font-size:12px;color:var(--text-muted)}
+        .icon-v{background:rgba(233,69,96,.15)}.icon-f{background:rgba(0,184,148,.15)}.icon-i{background:rgba(253,203,110,.15)}.icon-m{background:rgba(15,52,96,.3)}.icon-s{background:rgba(162,155,254,.15)}.icon-eye{background:rgba(116,185,255,.15)}.icon-comp{background:rgba(0,184,148,.15)}
+        .fc-title{font-size:16px;font-weight:600}.fc-sub{font-size:12px;color:var(--text-muted)}
         .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-        .form-group{display:flex;flex-direction:column;gap:6px}
-        .form-group.full{grid-column:1/-1}
+        .form-group{display:flex;flex-direction:column;gap:6px}.form-group.full{grid-column:1/-1}
         .form-group label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px}
         .form-group input,.form-group select,.form-group textarea{padding:12px 16px;background:var(--input-bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;font-family:inherit;outline:0;transition:.3s}
         .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--highlight);box-shadow:0 0 0 3px rgba(233,69,96,.1)}
@@ -38,53 +44,47 @@
         .form-group textarea{resize:vertical;min-height:80px}
         .form-group select{cursor:pointer;appearance:none}
 
+        /* Buttons */
         .action-bar{display:flex;gap:16px;justify-content:center;margin:30px 0;flex-wrap:wrap}
         .btn{padding:16px 40px;border:0;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;transition:.3s;font-family:inherit}
         .btn-primary{background:linear-gradient(135deg,#e94560,#0f3460);color:#fff;box-shadow:0 4px 20px rgba(233,69,96,.3)}
         .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(233,69,96,.4)}
-        .btn-secondary{background:0;color:var(--text);border:2px solid var(--border)}
-        .btn-secondary:hover{border-color:var(--text-muted)}
-        .btn-sample{background:rgba(0,184,148,.15);color:var(--success);border:1px solid rgba(0,184,148,.3)}
-        .btn-sample:hover{background:rgba(0,184,148,.25)}
+        .btn-secondary{background:0;color:var(--text);border:2px solid var(--border)}.btn-secondary:hover{border-color:var(--text-muted)}
+        .btn-sample{background:rgba(0,184,148,.15);color:var(--success);border:1px solid rgba(0,184,148,.3)}.btn-sample:hover{background:rgba(0,184,148,.25)}
+        .btn-vision{background:rgba(116,185,255,.15);color:#74b9ff;border:1px solid rgba(116,185,255,.3)}.btn-vision:hover{background:rgba(116,185,255,.25)}
         .btn-sm{padding:10px 24px;font-size:14px}
 
+        /* Loading */
         .loading{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(26,26,46,.95);z-index:1000;justify-content:center;align-items:center;flex-direction:column;gap:24px}
         .loading.active{display:flex}
         .spinner{width:60px;height:60px;border:4px solid var(--border);border-top-color:var(--highlight);border-radius:50%;animation:spin 1s linear infinite}
         @keyframes spin{to{transform:rotate(360deg)}}
         .loading-text{font-size:18px;color:var(--text-muted)}
 
+        /* Report */
         .report{display:none;margin-top:20px}.report.active{display:block}
         .report-header{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:24px}
         .report-header h2{font-size:28px;font-weight:700;margin-bottom:8px}
         .report-meta{display:flex;gap:24px;flex-wrap:wrap}
-        .meta-item{display:flex;flex-direction:column}
-        .meta-label{font-size:11px;text-transform:uppercase;color:var(--text-muted);letter-spacing:1px}
-        .meta-value{font-size:16px;font-weight:600}
-
+        .meta-item{display:flex;flex-direction:column}.meta-label{font-size:11px;text-transform:uppercase;color:var(--text-muted);letter-spacing:1px}.meta-value{font-size:16px;font-weight:600}
         .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
         .kpi{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
         .kpi-label{font-size:11px;text-transform:uppercase;color:var(--text-muted);letter-spacing:1px;margin-bottom:8px}
-        .kpi-value{font-size:28px;font-weight:700}
-        .kpi-detail{font-size:12px;color:var(--text-muted);margin-top:4px}
+        .kpi-value{font-size:28px;font-weight:700}.kpi-detail{font-size:12px;color:var(--text-muted);margin-top:4px}
         .green{color:var(--success)}.yellow{color:var(--warning)}.red{color:var(--danger)}.blue{color:#74b9ff}
 
+        /* Report Cards */
         .rcard{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;margin-bottom:24px;overflow:hidden}
         .rcard-head{padding:24px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:16px}
         .rcard-num{width:36px;height:36px;background:linear-gradient(135deg,#e94560,#0f3460);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:white;flex-shrink:0}
         .rcard-title{font-size:18px;font-weight:700}
-        .rcard-body{padding:28px}
-        .rcard-body p{font-size:14px;line-height:1.7;color:var(--text-muted);margin-bottom:12px}
-        .rcard-body strong{color:var(--text)}
-        .rcard-body h3{font-size:16px;margin:20px 0 10px;color:var(--text)}
+        .rcard-body{padding:28px}.rcard-body p{font-size:14px;line-height:1.7;color:var(--text-muted);margin-bottom:12px}.rcard-body strong{color:var(--text)}.rcard-body h3{font-size:16px;margin:20px 0 10px}
 
         .badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
-        .badge-green{background:rgba(0,184,148,.15);color:var(--success)}
-        .badge-yellow{background:rgba(253,203,110,.15);color:var(--warning)}
-        .badge-red{background:rgba(233,69,96,.15);color:var(--highlight)}
+        .badge-green{background:rgba(0,184,148,.15);color:var(--success)}.badge-yellow{background:rgba(253,203,110,.15);color:var(--warning)}.badge-red{background:rgba(233,69,96,.15);color:var(--highlight)}
 
         .rtable{width:100%;border-collapse:separate;border-spacing:0;margin:16px 0}
-        .rtable thead th{background:var(--input-bg);padding:12px 16px;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);font-weight:600;border-bottom:2px solid var(--border)}
+        .rtable thead th{background:var(--input-bg);padding:12px 16px;text-align:left;font-size:12px;text-transform:uppercase;color:var(--text-muted);font-weight:600;border-bottom:2px solid var(--border)}
         .rtable tbody td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:14px}
 
         .callout{padding:20px 24px;border-radius:12px;margin:16px 0;border-left:4px solid}
@@ -93,20 +93,17 @@
         .callout-blue{background:rgba(116,185,255,.08);border-color:#74b9ff}
         .callout-yellow{background:rgba(253,203,110,.08);border-color:var(--warning)}
         .callout h4{margin-bottom:8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px}
-        .callout p,.callout li{font-size:14px;line-height:1.7;color:var(--text-muted)}
-        .callout ul{margin:8px 0 0 20px}
+        .callout p,.callout li{font-size:14px;line-height:1.7;color:var(--text-muted)}.callout ul{margin:8px 0 0 20px}
 
         .rec-box{background:var(--input-bg);border:2px solid var(--highlight);border-radius:12px;padding:24px;margin:20px 0;text-align:center}
-        .rec-action{font-size:24px;font-weight:700;color:var(--highlight)}
-        .rec-detail{font-size:16px;color:var(--text)}
-        .rec-sub{font-size:13px;color:var(--text-muted);margin-top:8px}
+        .rec-action{font-size:24px;font-weight:700;color:var(--highlight)}.rec-detail{font-size:16px;color:var(--text)}.rec-sub{font-size:13px;color:var(--text-muted);margin-top:8px}
 
         .action-item{background:var(--input-bg);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:12px 0;display:flex;gap:16px;align-items:flex-start}
         .action-num{width:32px;height:32px;background:linear-gradient(135deg,#e94560,#0f3460);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;color:white}
-        .action-content h4{font-size:15px;font-weight:700;margin-bottom:6px}
-        .action-content p{font-size:13px;color:var(--text-muted);line-height:1.6}
-        .action-timing{display:inline-block;padding:2px 10px;background:rgba(233,69,96,.15);color:var(--highlight);border-radius:6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+        .action-content h4{font-size:15px;font-weight:700;margin-bottom:6px}.action-content p{font-size:13px;color:var(--text-muted);line-height:1.6}
+        .action-timing{display:inline-block;padding:2px 10px;background:rgba(233,69,96,.15);color:var(--highlight);border-radius:6px;font-size:11px;font-weight:600;text-transform:uppercase;margin-bottom:8px}
 
+        /* Probability bars */
         .prob-row{display:flex;align-items:center;gap:16px;margin:12px 0}
         .prob-label{width:100px;font-size:14px;font-weight:600;flex-shrink:0}
         .prob-bar-bg{flex:1;height:28px;background:var(--input-bg);border-radius:8px;overflow:hidden}
@@ -115,29 +112,44 @@
         .prob-yellow{background:linear-gradient(90deg,#fdcb6e,#f39c12)}
         .prob-red{background:linear-gradient(90deg,#e94560,#ff6b6b)}
 
+        /* Daily Probability Chart */
+        .chart-container{position:relative;width:100%;height:300px;background:var(--input-bg);border:1px solid var(--border);border-radius:12px;margin:20px 0;overflow:hidden}
+        .chart-canvas{width:100%;height:100%}
+        .chart-tooltip{position:absolute;background:var(--secondary);border:1px solid var(--highlight);border-radius:8px;padding:12px 16px;font-size:13px;pointer-events:none;display:none;z-index:10;min-width:180px}
+        .chart-tooltip .tt-day{font-weight:700;font-size:15px;color:var(--highlight);margin-bottom:4px}
+        .chart-tooltip .tt-row{display:flex;justify-content:space-between;gap:16px;margin:2px 0}
+        .chart-tooltip .tt-label{color:var(--text-muted)}.chart-tooltip .tt-value{font-weight:600}
+        .chart-legend{display:flex;gap:24px;margin-top:12px;justify-content:center;font-size:13px}
+        .chart-legend-item{display:flex;align-items:center;gap:6px}
+        .legend-dot{width:12px;height:12px;border-radius:3px}
+
+        /* Exit path */
         .exit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:16px 0}
         .exit-card{background:var(--input-bg);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
         .exit-card.rec{border-color:var(--success);box-shadow:0 0 20px rgba(0,184,148,.15)}
         .exit-card h4{font-size:14px;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
-        .exit-card .exit-gross{font-size:24px;font-weight:700;margin-bottom:4px}
-        .exit-card .exit-time{font-size:13px;color:var(--text-muted)}
+        .exit-gross{font-size:24px;font-weight:700;margin-bottom:4px}.exit-time{font-size:13px;color:var(--text-muted)}
         .rec-label{display:inline-block;background:var(--success);color:white;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:8px}
 
+        /* Confidence */
+        .conf-bar-wrap{display:flex;align-items:center;gap:12px;margin:16px 0}
         .conf-bar{flex:1;height:8px;background:var(--input-bg);border-radius:4px;overflow:hidden}
         .conf-fill{height:100%;border-radius:4px;transition:width 1s}
 
-        /* Daily Probability Chart */
-        .chart-container{position:relative;background:var(--input-bg);border:1px solid var(--border);border-radius:12px;padding:20px;margin:20px 0;overflow:hidden}
-        .chart-title{font-size:14px;font-weight:600;margin-bottom:16px;color:var(--text)}
-        .chart-svg{width:100%;height:200px}
-        .chart-tooltip{position:absolute;background:var(--secondary);border:1px solid var(--highlight);border-radius:8px;padding:10px 14px;font-size:12px;pointer-events:none;z-index:10;display:none;color:var(--text);white-space:nowrap}
-        .chart-tooltip strong{color:var(--highlight)}
+        /* Vision Result Card */
+        .vision-result{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:28px;margin:20px 0}
+        .vision-result h3{margin-bottom:16px;font-size:18px}
+        .vision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+        .vision-item{background:var(--input-bg);border-radius:10px;padding:16px;text-align:center}
+        .vision-item .vi-label{font-size:11px;text-transform:uppercase;color:var(--text-muted);letter-spacing:1px}
+        .vision-item .vi-value{font-size:18px;font-weight:700;margin-top:4px}
+        .vision-item .vi-value.empty{color:#636e72;font-style:italic;font-weight:400;font-size:14px}
 
         .timestamp{text-align:center;padding:20px;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border);margin-top:40px}
 
         @media(max-width:1024px){.form-section{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}}
-        @media(max-width:768px){.header{padding:16px 20px;flex-direction:column;gap:12px}.main{padding:20px 16px}.form-grid{grid-template-columns:1fr}.kpis{grid-template-columns:1fr}.exit-grid{grid-template-columns:1fr}}
-        @media print{.header,.action-bar,.report-actions-bar{display:none!important}body{background:#fff;color:#000}.rcard,.kpi,.report-header{border-color:#ddd;background:#fff}.rcard-body p,.callout p,.callout li,.action-content p{color:#333}}
+        @media(max-width:768px){.header{padding:16px 20px;flex-direction:column;gap:12px}.main{padding:20px 16px}.form-grid{grid-template-columns:1fr}.kpis{grid-template-columns:1fr}.exit-grid{grid-template-columns:1fr}.vision-grid{grid-template-columns:1fr}.tabs{flex-direction:column}}
+        @media print{.header,.action-bar,.tabs,.report-actions-bar{display:none!important}body{background:#fff;color:#000}.rcard,.kpi,.report-header{border-color:#ddd;background:#fff}.rcard-body p,.callout p,.action-content p{color:#333}}
     </style>
 </head>
 <body>
@@ -162,100 +174,154 @@
 </div>
 
 <div class="main">
-    <!-- FORM -->
+    <!-- INPUT SECTION -->
     <div id="formContainer">
-        <div class="action-bar" style="margin-top:0">
-            <button class="btn btn-sample btn-sm" onclick="loadSample()">▶ Load Sample (2021 Camry SE)</button>
-            <button class="btn btn-secondary btn-sm" onclick="clearForm()">✕ Clear</button>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('manual')">📋 Manual Input</div>
+            <div class="tab" onclick="switchTab('vision')">👁 Vision Identify</div>
+            <div class="tab" onclick="switchTab('comps')">📊 Comp Discovery</div>
         </div>
 
-        <div class="form-section">
-            <!-- Vehicle Details -->
-            <div class="form-card">
+        <!-- TAB: Vision Identify -->
+        <div class="tab-content" id="tab-vision">
+            <div class="form-card" style="max-width:800px;margin:0 auto">
                 <div class="form-card-header">
-                    <div class="form-card-icon icon-v">🚗</div>
-                    <div><div class="form-card-title">Vehicle Details</div><div class="form-card-sub">Year, make, model, specs</div></div>
+                    <div class="form-card-icon icon-eye">👁</div>
+                    <div><div class="fc-title">Vision Vehicle Identification</div><div class="fc-sub">Describe a vehicle or paste a listing URL</div></div>
                 </div>
-                <div class="form-grid">
-                    <div class="form-group"><label>Year</label><input type="number" id="year" placeholder="2021"></div>
-                    <div class="form-group"><label>Make</label><input type="text" id="make" placeholder="Toyota"></div>
-                    <div class="form-group"><label>Model</label><input type="text" id="model" placeholder="Camry"></div>
-                    <div class="form-group"><label>Trim</label><input type="text" id="trim" placeholder="SE"></div>
-                    <div class="form-group"><label>Mileage</label><input type="number" id="mileage" placeholder="41850"></div>
-                    <div class="form-group"><label>Ext Color</label><input type="text" id="extColor" placeholder="White"></div>
-                    <div class="form-group"><label>Int Color</label><input type="text" id="intColor" placeholder="Black"></div>
-                    <div class="form-group"><label>VIN</label><input type="text" id="vin" placeholder="Optional"></div>
-                    <div class="form-group full"><label>Equipment / Packages</label><textarea id="equipment" placeholder="SE Convenience Package, BSM, Power Seat, CarPlay"></textarea></div>
-                </div>
-            </div>
-
-            <!-- Financial -->
-            <div class="form-card">
-                <div class="form-card-header">
-                    <div class="form-card-icon icon-f">💰</div>
-                    <div><div class="form-card-title">Financial Data</div><div class="form-card-sub">Costs, pricing, margins</div></div>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group"><label>Acquisition Cost</label><input type="number" id="acqCost" placeholder="19400"></div>
-                    <div class="form-group"><label>Recon Cost</label><input type="number" id="reconCost" placeholder="850"></div>
-                    <div class="form-group"><label>List Price</label><input type="number" id="listPrice" placeholder="23495"></div>
-                    <div class="form-group"><label>Floorplan Rate %</label><input type="number" id="fpRate" placeholder="7.25" step="0.25"></div>
-                    <div class="form-group"><label>Wholesale Price</label><input type="number" id="wsPrice" placeholder="20300"></div>
-                    <div class="form-group"><label>Min Gross Target</label><input type="number" id="minGross" placeholder="2000"></div>
-                </div>
-            </div>
-
-            <!-- Inventory Status -->
-            <div class="form-card">
-                <div class="form-card-header">
-                    <div class="form-card-icon icon-i">📊</div>
-                    <div><div class="form-card-title">Inventory Status</div><div class="form-card-sub">Age, price history</div></div>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group"><label>Days in Inventory</label><input type="number" id="daysInv" placeholder="52"></div>
-                    <div class="form-group"><label>Price Changes</label><input type="number" id="priceChanges" placeholder="1"></div>
-                    <div class="form-group full"><label>Days Since Last Change</label><input type="number" id="daysSinceChange" placeholder="18"></div>
-                </div>
-            </div>
-
-            <!-- Market -->
-            <div class="form-card">
-                <div class="form-card-header">
-                    <div class="form-card-icon icon-m">🌐</div>
-                    <div><div class="form-card-title">Market Context</div><div class="form-card-sub">Competition, demand</div></div>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group"><label>Comp Low</label><input type="number" id="compLow" placeholder="22300"></div>
-                    <div class="form-group"><label>Comp High</label><input type="number" id="compHigh" placeholder="23900"></div>
-                    <div class="form-group"><label>Competing Units</label><input type="number" id="compUnits" placeholder="17"></div>
-                    <div class="form-group"><label>Regional Demand</label>
-                        <select id="demand"><option value="">Select...</option><option value="high">High</option><option value="moderate">Moderate</option><option value="soft">Soft</option></select>
+                <div class="form-grid" style="grid-template-columns:1fr">
+                    <div class="form-group full">
+                        <label>Vehicle Description or Listing URL</label>
+                        <textarea id="visionInput" placeholder="Examples:&#10;• White 2021 Toyota Camry SE sedan&#10;• https://www.autotrader.com/listing/12345&#10;• Blue 2022 Honda CR-V EX-L with sunroof, ~30k miles" style="min-height:120px"></textarea>
                     </div>
-                    <div class="form-group full"><label>Seasonal Notes</label><textarea id="seasonal" placeholder="Market timing factors..."></textarea></div>
                 </div>
-            </div>
-
-            <!-- Signals -->
-            <div class="form-card" style="grid-column:1/-1">
-                <div class="form-card-header">
-                    <div class="form-card-icon icon-s">📡</div>
-                    <div><div class="form-card-title">Dealer Activity Signals</div><div class="form-card-sub">Engagement & feedback</div></div>
+                <div class="action-bar" style="margin:20px 0 0">
+                    <button class="btn btn-vision btn-sm" onclick="runVisionIdentify()">👁 Identify Vehicle</button>
                 </div>
-                <div class="form-grid" style="grid-template-columns:repeat(3,1fr)">
-                    <div class="form-group"><label>Views (7d)</label><input type="number" id="v7" placeholder="28"></div>
-                    <div class="form-group"><label>Views (30d)</label><input type="number" id="v30" placeholder="134"></div>
-                    <div class="form-group"><label>Leads (7d)</label><input type="number" id="l7" placeholder="3"></div>
-                    <div class="form-group"><label>Leads (30d)</label><input type="number" id="l30" placeholder="11"></div>
-                    <div class="form-group"><label>Test Drives (7d)</label><input type="number" id="td7" placeholder="1"></div>
-                    <div class="form-group"><label>Test Drives (30d)</label><input type="number" id="td30" placeholder="4"></div>
-                    <div class="form-group full"><label>Sales Notes / Objections</label><textarea id="salesNotes" placeholder="Customer feedback, objections..."></textarea></div>
-                </div>
+                <div id="visionResult"></div>
             </div>
         </div>
 
-        <div class="action-bar">
-            <button class="btn btn-primary" onclick="generateReport()">⚡ Generate Intelligence Report</button>
-            <button class="btn btn-secondary" onclick="clearForm()">Clear All</button>
+        <!-- TAB: Comp Discovery -->
+        <div class="tab-content" id="tab-comps">
+            <div class="form-card" style="max-width:800px;margin:0 auto">
+                <div class="form-card-header">
+                    <div class="form-card-icon icon-comp">📊</div>
+                    <div><div class="fc-title">Market Comp Discovery</div><div class="fc-sub">Find completed sales and active listings for any vehicle</div></div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group"><label>Year</label><input type="number" id="compYear" placeholder="2021"></div>
+                    <div class="form-group"><label>Make</label><input type="text" id="compMake" placeholder="Toyota"></div>
+                    <div class="form-group"><label>Model</label><input type="text" id="compModel" placeholder="Camry"></div>
+                    <div class="form-group"><label>Trim</label><input type="text" id="compTrim" placeholder="SE"></div>
+                    <div class="form-group"><label>Mileage</label><input type="number" id="compMileage" placeholder="41850"></div>
+                    <div class="form-group"><label>Your List Price</label><input type="number" id="compListPrice" placeholder="23495"></div>
+                </div>
+                <div class="action-bar" style="margin:20px 0 0">
+                    <button class="btn btn-sample btn-sm" onclick="runCompDiscovery()">📊 Discover Comps</button>
+                </div>
+                <div id="compResult"></div>
+            </div>
+        </div>
+
+        <!-- TAB: Manual Input (default) -->
+        <div class="tab-content active" id="tab-manual">
+
+            <div class="action-bar" style="margin-top:0">
+                <button class="btn btn-sample btn-sm" onclick="loadSample()">▶ Load Sample Data</button>
+                <button class="btn btn-secondary btn-sm" onclick="clearForm()">✕ Clear</button>
+            </div>
+
+            <div class="form-section">
+                <!-- Vehicle Details -->
+                <div class="form-card">
+                    <div class="form-card-header">
+                        <div class="form-card-icon icon-v">🚗</div>
+                        <div><div class="fc-title">Vehicle Details</div><div class="fc-sub">Year, make, model, specs</div></div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group"><label>Year</label><input type="number" id="year" placeholder="2021"></div>
+                        <div class="form-group"><label>Make</label><input type="text" id="make" placeholder="Toyota"></div>
+                        <div class="form-group"><label>Model</label><input type="text" id="model" placeholder="Camry"></div>
+                        <div class="form-group"><label>Trim</label><input type="text" id="trim" placeholder="SE"></div>
+                        <div class="form-group"><label>Mileage</label><input type="number" id="mileage" placeholder="41850"></div>
+                        <div class="form-group"><label>Ext Color</label><input type="text" id="extColor" placeholder="White"></div>
+                        <div class="form-group"><label>Int Color</label><input type="text" id="intColor" placeholder="Black"></div>
+                        <div class="form-group"><label>VIN</label><input type="text" id="vin" placeholder="Optional"></div>
+                        <div class="form-group full"><label>Equipment / Packages</label><textarea id="equipment" placeholder="SE Convenience Package, BSM, etc."></textarea></div>
+                    </div>
+                </div>
+
+                <!-- Financial -->
+                <div class="form-card">
+                    <div class="form-card-header">
+                        <div class="form-card-icon icon-f">💰</div>
+                        <div><div class="fc-title">Financial Data</div><div class="fc-sub">Costs, pricing, margins</div></div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group"><label>Acquisition Cost</label><input type="number" id="acqCost" placeholder="19400"></div>
+                        <div class="form-group"><label>Recon Cost</label><input type="number" id="reconCost" placeholder="850"></div>
+                        <div class="form-group"><label>List Price</label><input type="number" id="listPrice" placeholder="23495"></div>
+                        <div class="form-group"><label>Floorplan Rate %</label><input type="number" id="fpRate" placeholder="7.25" step="0.25"></div>
+                        <div class="form-group"><label>Wholesale Exit</label><input type="number" id="wsPrice" placeholder="20300"></div>
+                        <div class="form-group"><label>Min Gross</label><input type="number" id="minGross" placeholder="2000"></div>
+                    </div>
+                </div>
+
+                <!-- Inventory -->
+                <div class="form-card">
+                    <div class="form-card-header">
+                        <div class="form-card-icon icon-i">📊</div>
+                        <div><div class="fc-title">Inventory Status</div><div class="fc-sub">Age and price history</div></div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group"><label>Days in Inventory</label><input type="number" id="daysInv" placeholder="52"></div>
+                        <div class="form-group"><label>Price Changes</label><input type="number" id="priceChanges" placeholder="1"></div>
+                        <div class="form-group full"><label>Days Since Last Change</label><input type="number" id="daysSinceChange" placeholder="18"></div>
+                    </div>
+                </div>
+
+                <!-- Market -->
+                <div class="form-card">
+                    <div class="form-card-header">
+                        <div class="form-card-icon icon-m">🌐</div>
+                        <div><div class="fc-title">Market Context</div><div class="fc-sub">Competition, demand</div></div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group"><label>Comp Low</label><input type="number" id="compLow" placeholder="22300"></div>
+                        <div class="form-group"><label>Comp High</label><input type="number" id="compHigh" placeholder="23900"></div>
+                        <div class="form-group"><label>Competing Units</label><input type="number" id="compUnits" placeholder="17"></div>
+                        <div class="form-group"><label>Regional Demand</label>
+                            <select id="demand"><option value="">Select...</option><option value="high">High</option><option value="moderate">Moderate</option><option value="soft">Soft</option></select>
+                        </div>
+                        <div class="form-group full"><label>Seasonal Notes</label><textarea id="seasonal" placeholder="Market timing factors..."></textarea></div>
+                    </div>
+                </div>
+
+                <!-- Signals -->
+                <div class="form-card" style="grid-column:1/-1">
+                    <div class="form-card-header">
+                        <div class="form-card-icon icon-s">📡</div>
+                        <div><div class="fc-title">Dealer Activity Signals</div><div class="fc-sub">Engagement and feedback</div></div>
+                    </div>
+                    <div class="form-grid" style="grid-template-columns:repeat(3,1fr)">
+                        <div class="form-group"><label>Views (7d)</label><input type="number" id="v7" placeholder="28"></div>
+                        <div class="form-group"><label>Views (30d)</label><input type="number" id="v30" placeholder="134"></div>
+                        <div class="form-group"><label>Leads (7d)</label><input type="number" id="l7" placeholder="3"></div>
+                        <div class="form-group"><label>Leads (30d)</label><input type="number" id="l30" placeholder="11"></div>
+                        <div class="form-group"><label>Test Drives (7d)</label><input type="number" id="td7" placeholder="1"></div>
+                        <div class="form-group"><label>Test Drives (30d)</label><input type="number" id="td30" placeholder="4"></div>
+                        <div class="form-group full"><label>Sales Notes / Objections</label><textarea id="salesNotes" placeholder="Customer feedback..."></textarea></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <button class="btn btn-primary" onclick="generateReport()">⚡ Generate Intelligence Report</button>
+                <button class="btn btn-secondary" onclick="clearForm()">Clear All</button>
+            </div>
         </div>
     </div>
 
@@ -264,46 +330,26 @@
 </div>
 
 <script>
-function gv(id){return document.getElementById(id).value.trim()}
-function gn(id){return parseFloat(document.getElementById(id).value)||0}
-function fm(n){return n<0?'-$'+Math.abs(Math.round(n)).toLocaleString():'$'+Math.round(n).toLocaleString()}
+    // ============================================================
+// TAB SWITCHING
+// ============================================================
+function switchTab(tabName){
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+    document.getElementById('tab-'+tabName).classList.add('active');
+    event.target.classList.add('active');
+}
 
+// ============================================================
+// SAMPLE DATA
+// ============================================================
 function loadSample(){
-    document.getElementById('year').value='2021';
-    document.getElementById('make').value='Toyota';
-    document.getElementById('model').value='Camry';
-    document.getElementById('trim').value='SE';
-    document.getElementById('mileage').value='41850';
-    document.getElementById('extColor').value='White';
-    document.getElementById('intColor').value='Black';
-    document.getElementById('equipment').value='SE Convenience Package, Blind Spot Monitor, Power Driver Seat, Apple CarPlay';
-    document.getElementById('acqCost').value='19400';
-    document.getElementById('reconCost').value='850';
-    document.getElementById('listPrice').value='23495';
-    document.getElementById('fpRate').value='7.25';
-    document.getElementById('wsPrice').value='20300';
-    document.getElementById('minGross').value='2000';
-    document.getElementById('daysInv').value='52';
-    document.getElementById('priceChanges').value='1';
-    document.getElementById('daysSinceChange').value='18';
-    document.getElementById('compLow').value='22300';
-    document.getElementById('compHigh').value='23900';
-    document.getElementById('compUnits').value='17';
-    document.getElementById('demand').value='moderate';
-    document.getElementById('seasonal').value='Neutral; steady year-round demand, mild compression from newer model incentives';
-    document.getElementById('v7').value='28';
-    document.getElementById('v30').value='134';
-    document.getElementById('l7').value='3';
-    document.getElementById('l30').value='11';
-    document.getElementById('td7').value='1';
-    document.getElementById('td30').value='4';
-    document.getElementById('salesNotes').value='Price resistance versus newer 2023 models; customers asking for $500-$1,000 flexibility';
+    const d={year:'2021',make:'Toyota',model:'Camry',trim:'SE',mileage:'41850',extColor:'White',intColor:'Black',equipment:'SE Convenience Package, Blind Spot Monitor, Power Driver Seat, Apple CarPlay',acqCost:'19400',reconCost:'850',listPrice:'23495',fpRate:'7.25',wsPrice:'20300',minGross:'2000',daysInv:'52',priceChanges:'1',daysSinceChange:'18',compLow:'22300',compHigh:'23900',compUnits:'17',demand:'moderate',seasonal:'Neutral; steady year-round demand, mild compression from newer model incentives',v7:'28',v30:'134',l7:'3',l30:'11',td7:'1',td30:'4',salesNotes:'Price resistance versus newer 2023 models; customers asking for $500-$1,000 flexibility'};
+    Object.keys(d).forEach(k=>{const el=document.getElementById(k);if(el){el.tagName==='SELECT'?el.value=d[k]:el.value=d[k]}});
 }
 
 function clearForm(){
-    document.querySelectorAll('#formContainer input,#formContainer textarea,#formContainer select').forEach(function(e){
-        if(e.tagName==='SELECT') e.selectedIndex=0; else e.value='';
-    });
+    document.querySelectorAll('#tab-manual input,#tab-manual textarea,#tab-manual select').forEach(e=>{e.tagName==='SELECT'?e.selectedIndex=0:e.value=''});
     document.getElementById('reportSection').innerHTML='';
     document.getElementById('reportSection').classList.remove('active');
 }
@@ -314,8 +360,137 @@ function showForm(){
     window.scrollTo({top:0,behavior:'smooth'});
 }
 
+function gv(id){return(document.getElementById(id)||{}).value?.trim()||''}
+function gn(id){return parseFloat((document.getElementById(id)||{}).value)||0}
+function fm(n){return n<0?'-$'+Math.abs(Math.round(n)).toLocaleString():'$'+Math.round(n).toLocaleString()}
+
+// ============================================================
+// VISION IDENTIFY
+// ============================================================
+async function runVisionIdentify(){
+    const desc=document.getElementById('visionInput').value.trim();
+    if(!desc){alert('Enter a vehicle description or URL.');return}
+    document.getElementById('loading').classList.add('active');
+    document.getElementById('loadingText').textContent='Identifying vehicle...';
+    try{
+        const r=await fetch('/api/vision/identify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({description:desc,url:desc})});
+        const data=await r.json();
+        if(!r.ok)throw new Error(data.error);
+        const id=data.identification.identified;
+        const conf=data.identification.confidence;
+        const missing=data.identification.missing_data;
+        let html=`<div class="vision-result"><h3>Identification Result <span class="badge ${conf.level==='HIGH'?'badge-green':conf.level==='MEDIUM'?'badge-yellow':'badge-red'}">${conf.level} — ${conf.percent}%</span></h3>`;
+        html+=`<div class="vision-grid">`;
+        html+=`<div class="vision-item"><div class="vi-label">Year</div><div class="vi-value ${id.year?'':'empty'}">${id.year||'Not detected'}</div></div>`;
+        html+=`<div class="vision-item"><div class="vi-label">Make</div><div class="vi-value ${id.make?'':'empty'}">${id.make||'Not detected'}</div></div>`;
+        html+=`<div class="vision-item"><div class="vi-label">Model</div><div class="vi-value ${id.model?'':'empty'}">${id.model||'Not detected'}</div></div>`;
+        html+=`<div class="vision-item"><div class="vi-label">Trim</div><div class="vi-value ${id.trim?'':'empty'}">${id.trim||'Not detected'}</div></div>`;
+        html+=`<div class="vision-item"><div class="vi-label">Body Style</div><div class="vi-value ${id.body_style?'':'empty'}">${id.body_style||'Not detected'}</div></div>`;
+        html+=`<div class="vision-item"><div class="vi-label">Color</div><div class="vi-value ${id.color?'':'empty'}">${id.color||'Not detected'}</div></div>`;
+        html+=`</div>`;
+        if(missing.length>0){
+            html+=`<div class="callout callout-yellow" style="margin-top:16px"><h4>Missing Data</h4><ul>${missing.map(m=>'<li>'+m+'</li>').join('')}</ul></div>`;
+        }
+        html+=`<div class="action-bar" style="margin:20px 0 0"><button class="btn btn-sample btn-sm" onclick="applyVisionToForm()">✓ Apply to Form & Continue</button></div>`;
+        html+=`</div>`;
+        document.getElementById('visionResult').innerHTML=html;
+        // Store for later use
+        window._visionData=id;
+    }catch(e){alert('Error: '+e.message)}finally{document.getElementById('loading').classList.remove('active')}
+}
+
+function applyVisionToForm(){
+    const id=window._visionData;
+    if(!id)return;
+    if(id.year)document.getElementById('year').value=id.year;
+    if(id.make)document.getElementById('make').value=id.make;
+    if(id.model)document.getElementById('model').value=id.model;
+    if(id.trim)document.getElementById('trim').value=id.trim;
+    if(id.color)document.getElementById('extColor').value=id.color;
+    switchTab('manual');
+    document.querySelector('.tab').click();
+    // Activate manual tab
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.tab')[0].classList.add('active');
+    document.getElementById('tab-manual').classList.add('active');
+}
+
+// ============================================================
+// COMP DISCOVERY
+// ============================================================
+async function runCompDiscovery(){
+    const year=gn('compYear'),make=gv('compMake'),model=gv('compModel');
+    if(!year||!make||!model){alert('Enter year, make, and model.');return}
+    document.getElementById('loading').classList.add('active');
+    document.getElementById('loadingText').textContent='Discovering market comps...';
+    try{
+        const r=await fetch('/api/comps/discover',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({year,make,model,trim:gv('compTrim'),mileage:gn('compMileage'),list_price:gn('compListPrice'),comp_low:0,comp_high:0,competing_units:0})});
+        const data=await r.json();
+        if(!r.ok)throw new Error(data.error);
+        const c=data.comp_analysis;
+        let html=`<div class="vision-result"><h3>Market Comp Analysis — ${c.vehicle_searched}</h3>`;
+
+        // Summary stats
+        html+=`<div class="vision-grid" style="margin-bottom:20px">`;
+        html+=`<div class="vision-item"><div class="vi-label">Median Sale Price</div><div class="vi-value green">${fm(c.price_analysis.median_sale_price)}</div></div>`;
+        html+=`<div class="vision-item"><div class="vi-label">Median Days to Sale</div><div class="vi-value blue">${c.days_to_sale.median}</div></div>`;
+        html+=`<div class="vision-item"><div class="vi-label">Supply Pressure</div><div class="vi-value ${c.supply_demand.supply_pressure==='HIGH'?'red':c.supply_demand.supply_pressure==='LOW'?'green':'yellow'}">${c.supply_demand.supply_pressure}</div></div>`;
+        html+=`<div class="vision-item"><div class="vi-label">Price Range</div><div class="vi-value">${fm(c.price_analysis.price_range_low)} - ${fm(c.price_analysis.price_range_high)}</div></div>`;
+        html+=`<div class="vision-item"><div class="vi-label">Velocity</div><div class="vi-value">${c.supply_demand.velocity}</div></div>`;
+        html+=`<div class="vision-item"><div class="vi-label">Comps Found</div><div class="vi-value">${c.comp_count.total}</div></div>`;
+        html+=`</div>`;
+
+        // Completed sales table
+        if(c.completed_sales.length>0){
+            html+=`<h3>Completed Sales</h3><table class="rtable"><thead><tr><th>Price</th><th>Mileage</th><th>Days on Market</th><th>Source</th><th>Distance</th></tr></thead><tbody>`;
+            c.completed_sales.forEach(s=>{
+                html+=`<tr><td>${fm(s.price)}</td><td>${s.mileage.toLocaleString()}</td><td>${s.days_on_market}</td><td>${s.source}</td><td>${s.distance_miles} mi</td></tr>`;
+            });
+            html+=`</tbody></table>`;
+        }
+
+        // Active listings table
+        if(c.active_listings.length>0){
+            html+=`<h3>Active Listings</h3><table class="rtable"><thead><tr><th>Price</th><th>Mileage</th><th>Days Listed</th><th>Source</th><th>Distance</th></tr></thead><tbody>`;
+            c.active_listings.forEach(s=>{
+                html+=`<tr><td>${fm(s.price)}</td><td>${s.mileage.toLocaleString()}</td><td>${s.days_listed}</td><td>${s.source}</td><td>${s.distance_miles} mi</td></tr>`;
+            });
+            html+=`</tbody></table>`;
+        }
+
+        html+=`<div class="callout callout-blue"><h4>Data Source</h4><p>${c.data_freshness}</p></div>`;
+
+        // Apply button
+        html+=`<div class="action-bar" style="margin:20px 0 0"><button class="btn btn-sample btn-sm" onclick="applyCompsToForm(${c.price_analysis.price_range_low},${c.price_analysis.price_range_high},${c.comp_count.total})">✓ Apply to Analysis Form</button></div>`;
+        html+=`</div>`;
+        document.getElementById('compResult').innerHTML=html;
+    }catch(e){alert('Error: '+e.message)}finally{document.getElementById('loading').classList.remove('active')}
+}
+
+function applyCompsToForm(low,high,units){
+    document.getElementById('compLow').value=Math.round(low);
+    document.getElementById('compHigh').value=Math.round(high);
+    document.getElementById('compUnits').value=units;
+    // Copy vehicle info too
+    if(gv('compYear'))document.getElementById('year').value=gv('compYear');
+    if(gv('compMake'))document.getElementById('make').value=gv('compMake');
+    if(gv('compModel'))document.getElementById('model').value=gv('compModel');
+    if(gv('compTrim'))document.getElementById('trim').value=gv('compTrim');
+    if(gn('compMileage'))document.getElementById('mileage').value=gn('compMileage');
+    if(gn('compListPrice'))document.getElementById('listPrice').value=gn('compListPrice');
+    // Switch to manual tab
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.tab')[0].classList.add('active');
+    document.getElementById('tab-manual').classList.add('active');
+}
+
+// ============================================================
+// GENERATE REPORT
+// ============================================================
 async function generateReport(){
-    var data={
+    const data={
         year:gn('year'),make:gv('make'),model:gv('model'),trim:gv('trim'),mileage:gn('mileage'),
         ext_color:gv('extColor'),int_color:gv('intColor'),vin:gv('vin'),equipment:gv('equipment'),
         acquisition_cost:gn('acqCost'),recon_cost:gn('reconCost'),list_price:gn('listPrice'),
@@ -326,265 +501,254 @@ async function generateReport(){
         views_7:gn('v7'),views_30:gn('v30'),leads_7:gn('l7'),leads_30:gn('l30'),
         test_drives_7:gn('td7'),test_drives_30:gn('td30'),sales_notes:gv('salesNotes')
     };
-
-    if(!data.year||!data.make||!data.model||!data.acquisition_cost||!data.list_price){
-        alert('Please fill in Year, Make, Model, Acquisition Cost, and List Price.');
-        return;
-    }
-
+    if(!data.year||!data.make||!data.model||!data.acquisition_cost||!data.list_price){alert('Fill in Year, Make, Model, Acquisition Cost, and List Price.');return}
     document.getElementById('loading').classList.add('active');
     document.getElementById('loadingText').textContent='Generating Intelligence Report...';
-
     try{
-        var resp=await fetch('/api/analyze',{
-            method:'POST',
-            headers:{'Content-Type':'application/json'},
-            body:JSON.stringify(data)
-        });
-        var result=await resp.json();
-        if(!resp.ok) throw new Error(result.error||'Analysis failed');
-
+        const r=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+        const result=await r.json();
+        if(!r.ok)throw new Error(result.error||'Analysis failed');
         renderReport(data,result.report.analysis);
         document.getElementById('formContainer').style.display='none';
         document.getElementById('reportSection').classList.add('active');
         window.scrollTo({top:0,behavior:'smooth'});
-    }catch(err){
-        alert('Error: '+err.message);
-    }finally{
-        document.getElementById('loading').classList.remove('active');
-    }
+    }catch(e){alert('Error: '+e.message)}finally{document.getElementById('loading').classList.remove('active')}
 }
 
+// ============================================================
+// RENDER REPORT
+// ============================================================
 function renderReport(d,a){
-    var title=d.year+' '+d.make+' '+d.model+' '+(d.trim||'');
-    var f=a.financials;
-    var p=a.pricing;
-    var sp=a.sale_probability;
-    var ag=a.aging;
-    var ep=a.exit_path;
-    var rc=a.risk_and_confidence;
+    const title=`${d.year} ${d.make} ${d.model} ${d.trim||''}`.trim();
+    const f=a.financials,p=a.pricing,sp=a.sale_probability,ag=a.aging,ep=a.exit_path,rc=a.risk_and_confidence;
+    const zb=ag.zone==='HEALTHY'?'badge-green':ag.zone==='AT-RISK'?'badge-yellow':'badge-red';
+    const gc=f.current_net_gross>2000?'green':f.current_net_gross>0?'yellow':'red';
 
-    var zoneBadge=ag.zone==='HEALTHY'?'badge-green':ag.zone==='AT-RISK'?'badge-yellow':'badge-red';
-    var grossColor=f.current_net_gross>2000?'green':f.current_net_gross>0?'yellow':'red';
+    let html=`
+    <div class="report-actions-bar" style="display:flex;gap:12px;justify-content:flex-end;margin-bottom:20px">
+        <button class="btn btn-secondary btn-sm" onclick="showForm();document.getElementById('formContainer').style.display='block'">← Back</button>
+        <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨 Print</button>
+    </div>
+    <div class="report-header"><h2>${title}</h2>
+        <div class="report-meta">
+            <div class="meta-item"><span class="meta-label">Mileage</span><span class="meta-value">${d.mileage.toLocaleString()} mi</span></div>
+            <div class="meta-item"><span class="meta-label">Color</span><span class="meta-value">${d.ext_color}/${d.int_color}</span></div>
+            <div class="meta-item"><span class="meta-label">Days in Stock</span><span class="meta-value">${d.days_in_inventory}</span></div>
+            <div class="meta-item"><span class="meta-label">Zone</span><span class="badge ${zb}">${ag.zone}</span></div>
+        </div>
+    </div>
+    <div class="kpis">
+        <div class="kpi"><div class="kpi-label">Total Invested</div><div class="kpi-value blue">${fm(f.total_invested)}</div><div class="kpi-detail">Acq + Recon</div></div>
+        <div class="kpi"><div class="kpi-label">Net Gross</div><div class="kpi-value ${gc}">${fm(f.current_net_gross)}</div><div class="kpi-detail">After ${fm(f.floorplan_accrued_to_date)} floorplan</div></div>
+        <div class="kpi"><div class="kpi-label">Daily Floorplan</div><div class="kpi-value red">$${f.daily_floorplan_cost.toFixed(2)}</div><div class="kpi-detail">${fm(f.floorplan_accrued_to_date)} accrued</div></div>
+        <div class="kpi"><div class="kpi-label">Wholesale Exit</div><div class="kpi-value ${f.wholesale_net_today>=0?'yellow':'red'}">${fm(f.wholesale_net_today)}</div><div class="kpi-detail">Net today</div></div>
+    </div>`;
 
-    // Build daily curve chart SVG
-    var curveHtml='';
+    // 1. SALE PROBABILITY with Daily Chart
+    html+=`<div class="rcard"><div class="rcard-head"><div class="rcard-num">1</div><div class="rcard-title">Multi-Horizon Sale Probability</div></div><div class="rcard-body">
+        <div class="prob-row"><div class="prob-label">30 Days</div><div class="prob-bar-bg"><div class="prob-bar ${sp.prob_30_day>50?'prob-green':sp.prob_30_day>30?'prob-yellow':'prob-red'}" style="width:${sp.prob_30_day}%">${sp.prob_30_day}%</div></div></div>
+        <div class="prob-row"><div class="prob-label">60 Days</div><div class="prob-bar-bg"><div class="prob-bar ${sp.prob_60_day>60?'prob-green':sp.prob_60_day>40?'prob-yellow':'prob-red'}" style="width:${sp.prob_60_day}%">${sp.prob_60_day}%</div></div></div>
+        <div class="prob-row"><div class="prob-label">90 Days</div><div class="prob-bar-bg"><div class="prob-bar ${sp.prob_90_day>70?'prob-green':sp.prob_90_day>50?'prob-yellow':'prob-red'}" style="width:${sp.prob_90_day}%">${sp.prob_90_day}%</div></div></div>`;
+
+    // Daily probability chart
     if(sp.daily_curve&&sp.daily_curve.length>0){
-        var cw=800,ch=180,padL=45,padR=15,padT=10,padB=30;
-        var plotW=cw-padL-padR,plotH=ch-padT-padB;
-        var maxCum=Math.max.apply(null,sp.daily_curve.map(function(p){return p.cumulative_probability}))||100;
-        maxCum=Math.ceil(maxCum/10)*10;
-
-        var cumPoints='';
-        var dailyBars='';
-        var maxDaily=Math.max.apply(null,sp.daily_curve.map(function(p){return p.daily_probability}))||5;
-
-        for(var i=0;i<sp.daily_curve.length;i++){
-            var pt=sp.daily_curve[i];
-            var x=padL+(pt.day/90)*plotW;
-            var yCum=padT+plotH-(pt.cumulative_probability/maxCum)*plotH;
-            cumPoints+=(i===0?'M':'L')+x.toFixed(1)+','+yCum.toFixed(1)+' ';
-
-            var barH=(pt.daily_probability/maxDaily)*plotH*0.6;
-            var barY=padT+plotH-barH;
-            var barColor=pt.day<=30?'rgba(0,184,148,0.4)':pt.day<=60?'rgba(253,203,110,0.4)':'rgba(233,69,96,0.4)';
-            dailyBars+='<rect x="'+(x-2)+'" y="'+barY+'" width="4" height="'+barH+'" fill="'+barColor+'" data-day="'+pt.day+'" data-daily="'+pt.daily_probability+'" data-cum="'+pt.cumulative_probability+'"/>';
+        html+=`<h3>Daily Probability Curve (Day 1–90)</h3>
+        <div class="chart-container" id="chartContainer">
+            <canvas class="chart-canvas" id="probChart"></canvas>
+            <div class="chart-tooltip" id="chartTooltip">
+                <div class="tt-day" id="ttDay"></div>
+                <div class="tt-row"><span class="tt-label">Daily Probability:</span><span class="tt-value" id="ttDaily"></span></div>
+                <div class="tt-row"><span class="tt-label">Cumulative:</span><span class="tt-value" id="ttCum"></span></div>
+            </div>
+        </div>
+        <div class="chart-legend">
+            <div class="chart-legend-item"><div class="legend-dot" style="background:var(--highlight)"></div>Daily Sell Probability</div>
+            <div class="chart-legend-item"><div class="legend-dot" style="background:var(--success)"></div>Cumulative Probability</div>
+        </div>`;
+        if(sp.curve_insights){
+            html+=`<div class="callout callout-blue" style="margin-top:16px"><h4>Curve Insights</h4><ul>
+                <li>${sp.curve_insights.acceleration_phase}</li>
+                <li>${sp.curve_insights.decay_begins}</li>
+                <li><strong>${sp.curve_insights.critical_insight}</strong></li>
+            </ul></div>`;
         }
-
-        // Grid lines
-        var gridLines='';
-        for(var g=0;g<=maxCum;g+=20){
-            var gy=padT+plotH-(g/maxCum)*plotH;
-            gridLines+='<line x1="'+padL+'" y1="'+gy+'" x2="'+(cw-padR)+'" y2="'+gy+'" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>';
-            gridLines+='<text x="'+(padL-8)+'" y="'+(gy+4)+'" fill="#b2bec3" font-size="10" text-anchor="end">'+g+'%</text>';
-        }
-
-        // Day markers
-        var dayMarkers='';
-        for(var dm=0;dm<=90;dm+=15){
-            var dx=padL+(dm/90)*plotW;
-            dayMarkers+='<text x="'+dx+'" y="'+(ch-5)+'" fill="#b2bec3" font-size="10" text-anchor="middle">'+dm+'</text>';
-            if(dm>0) dayMarkers+='<line x1="'+dx+'" y1="'+padT+'" x2="'+dx+'" y2="'+(padT+plotH)+'" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>';
-        }
-
-        // Day 30/60 markers
-        var d30x=padL+(30/90)*plotW;
-        var d60x=padL+(60/90)*plotW;
-        var markers='<line x1="'+d30x+'" y1="'+padT+'" x2="'+d30x+'" y2="'+(padT+plotH)+'" stroke="rgba(0,184,148,0.3)" stroke-width="1" stroke-dasharray="4,4"/>';
-        markers+='<text x="'+d30x+'" y="'+(padT-2)+'" fill="#00b894" font-size="9" text-anchor="middle">30d</text>';
-        markers+='<line x1="'+d60x+'" y1="'+padT+'" x2="'+d60x+'" y2="'+(padT+plotH)+'" stroke="rgba(253,203,110,0.3)" stroke-width="1" stroke-dasharray="4,4"/>';
-        markers+='<text x="'+d60x+'" y="'+(padT-2)+'" fill="#fdcb6e" font-size="9" text-anchor="middle">60d</text>';
-
-        curveHtml='<div class="chart-container" id="chartContainer">'
-            +'<div class="chart-title">Daily Probability Curve — Hover for Details</div>'
-            +'<div class="chart-tooltip" id="chartTooltip"></div>'
-            +'<svg class="chart-svg" viewBox="0 0 '+cw+' '+ch+'" preserveAspectRatio="xMidYMid meet">'
-            +gridLines+dayMarkers+markers+dailyBars
-            +'<path d="'+cumPoints+'" fill="none" stroke="#e94560" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'
-            +'</svg>'
-            +'<div style="display:flex;gap:20px;margin-top:8px;font-size:11px;color:var(--text-muted)">'
-            +'<span>🟢 Bars = Daily sell probability</span>'
-            +'<span>🔴 Line = Cumulative probability</span>'
-            +'</div></div>';
     }
 
-    // Curve insights
-    var insightsHtml='';
-    if(sp.curve_insights){
-        var ci=sp.curve_insights;
-        insightsHtml='<div class="callout callout-blue"><h4>Probability Curve Insights</h4><ul>'
-            +'<li><strong>Acceleration:</strong> '+ci.acceleration_phase+'</li>'
-            +'<li><strong>Peak Day:</strong> Day '+ci.peak_probability_day+' — highest daily sell probability.</li>'
-            +'<li><strong>Decay Begins:</strong> '+ci.decay_begins+'</li>'
-            +'<li><strong>Critical Window:</strong> '+ci.critical_insight+'</li>'
-            +'</ul></div>';
+    html+=`<div class="callout callout-blue"><h4>Key Drivers</h4><ul>${sp.factors_30.concat(sp.factors_60,sp.factors_90).map(f=>'<li>'+f+'</li>').join('')}</ul></div>
+    </div></div>`;
+
+    // 2. AGING
+    html+=`<div class="rcard"><div class="rcard-head"><div class="rcard-num">2</div><div class="rcard-title">Inventory Velocity & Aging Risk</div></div><div class="rcard-body">
+        <p>Zone: <span class="badge ${zb}">${ag.zone}</span> — ${ag.zone_detail}</p>
+        <table class="rtable"><thead><tr><th>Scenario</th><th>+Days</th><th>Total</th><th>Floorplan</th><th>Gross (Sticker)</th><th>Realistic Gross</th></tr></thead><tbody>
+        ${ag.erosion_table.map((r,i)=>`<tr><td>${i===0?'<strong>Today</strong>':'+'+r.additional_days}</td><td>${r.additional_days}</td><td>${r.total_days}</td><td>${fm(r.floorplan_accrued)}</td><td>${fm(r.gross_at_sticker)}</td><td>${fm(r.realistic_gross_low)} – ${fm(r.realistic_gross_high)}</td></tr>`).join('')}
+        </tbody></table>
+        <div class="callout callout-red"><h4>Irrationality Threshold: Day ${ag.irrationality_threshold.day}</h4><p>${ag.irrationality_threshold.explanation}</p></div>
+    </div></div>`;
+
+    // 3. PRICING
+    html+=`<div class="rcard"><div class="rcard-head"><div class="rcard-num">3</div><div class="rcard-title">Pricing Strategy</div></div><div class="rcard-body">
+        <div class="rec-box"><div class="rec-action">${p.action==='REDUCE'?'↓ REDUCE BY '+fm(p.change_amount):p.action==='INCREASE'?'↑ INCREASE BY '+fm(p.change_amount):'● HOLD'}</div>
+        <div class="rec-detail">${p.action!=='HOLD'?'New: <strong>'+fm(p.new_list_price)+'</strong> from '+fm(p.current_list_price):'Maintain <strong>'+fm(p.current_list_price)+'</strong>'}</div>
+        <div class="rec-sub">${p.timing}</div></div>
+        <p>${p.reasoning}</p>`;
+    if(p.probability_impact){
+        html+=`<div class="callout callout-green"><h4>Probability Impact</h4><p>${p.probability_impact.explanation}</p></div>`;
     }
+    html+=`<div class="callout callout-blue"><h4>Elasticity: ${p.elasticity.level}</h4><p>${p.elasticity.detail}</p></div>
+        <p>Expected transaction: <strong>${fm(p.expected_transaction_range.low)} – ${fm(p.expected_transaction_range.high)}</strong></p>
+        <p>Expected gross: <strong>${fm(p.expected_gross_range.low)} – ${fm(p.expected_gross_range.high)}</strong></p>
+    </div></div>`;
 
-    var html=''
-        +'<div class="report-actions-bar" style="display:flex;gap:12px;justify-content:flex-end;margin-bottom:20px">'
-        +'<button class="btn btn-secondary btn-sm" onclick="showForm();document.getElementById(\'formContainer\').style.display=\'block\'">← Back</button>'
-        +'<button class="btn btn-secondary btn-sm" onclick="window.print()">🖨 Print</button>'
-        +'</div>'
+    // 4. EXIT PATH
+    html+=`<div class="rcard"><div class="rcard-head"><div class="rcard-num">4</div><div class="rcard-title">Optimal Exit Path</div></div><div class="rcard-body">
+        <div class="exit-grid">${ep.paths.map(path=>`
+            <div class="exit-card ${path.recommended?'rec':''}">
+                ${path.recommended?'<div class="rec-label">RECOMMENDED</div>':''}
+                <h4>${path.path.replace('_',' ')}</h4>
+                <div class="exit-gross ${path.recommended?'green':''}">${fm(path.expected_gross_low)}${path.expected_gross_high!==path.expected_gross_low?' – '+fm(path.expected_gross_high):''}</div>
+                <div class="exit-time">${path.expected_days}</div>
+                <div style="font-size:12px;color:var(--text-muted);margin-top:8px">${path.probability}</div>
+            </div>`).join('')}</div>
+        <p>${ep.reasoning}</p>
+        <div class="callout callout-yellow"><h4>Decision Trigger</h4><p>${ep.decision_trigger.condition}</p></div>
+    </div></div>`;
 
-        // Header
-        +'<div class="report-header">'
-        +'<h2>'+title+'</h2>'
-        +'<div class="report-meta">'
-        +'<div class="meta-item"><span class="meta-label">Mileage</span><span class="meta-value">'+d.mileage.toLocaleString()+' mi</span></div>'
-        +'<div class="meta-item"><span class="meta-label">Color</span><span class="meta-value">'+d.ext_color+' / '+d.int_color+'</span></div>'
-        +'<div class="meta-item"><span class="meta-label">Days in Stock</span><span class="meta-value">'+d.days_in_inventory+'</span></div>'
-        +'<div class="meta-item"><span class="meta-label">Zone</span><span class="badge '+zoneBadge+'">'+ag.zone+'</span></div>'
-        +'</div></div>'
+    // 5. ACTION PLAN
+    html+=`<div class="rcard"><div class="rcard-head"><div class="rcard-num">5</div><div class="rcard-title">Dealer Action Plan — This Week</div></div><div class="rcard-body">
+        ${a.action_plan.map(act=>`<div class="action-item"><div class="action-num">${act.priority}</div><div class="action-content">
+            <div class="action-timing">${act.timing}</div><h4>${act.title}</h4><p>${act.detail}</p>
+            <p style="margin-top:6px;font-style:italic"><strong>Purpose:</strong> ${act.purpose}</p>
+        </div></div>`).join('')}
+    </div></div>`;
 
-        // KPIs
-        +'<div class="kpis">'
-        +'<div class="kpi"><div class="kpi-label">Total Invested</div><div class="kpi-value blue">'+fm(f.total_invested)+'</div><div class="kpi-detail">Acq + Recon</div></div>'
-        +'<div class="kpi"><div class="kpi-label">Net Gross</div><div class="kpi-value '+grossColor+'">'+fm(f.current_net_gross)+'</div><div class="kpi-detail">After '+fm(f.floorplan_accrued_to_date)+' floorplan</div></div>'
-        +'<div class="kpi"><div class="kpi-label">Daily Floorplan</div><div class="kpi-value red">$'+f.daily_floorplan_cost.toFixed(2)+'</div><div class="kpi-detail">'+fm(f.floorplan_accrued_to_date)+' accrued</div></div>'
-        +'<div class="kpi"><div class="kpi-label">Wholesale Exit</div><div class="kpi-value '+(f.wholesale_net_today>=0?'yellow':'red')+'">'+fm(f.wholesale_net_today)+'</div><div class="kpi-detail">Net today</div></div>'
-        +'</div>'
+    // 6. RISK & CONFIDENCE
+    html+=`<div class="rcard"><div class="rcard-head"><div class="rcard-num">6</div><div class="rcard-title">Risk & Confidence</div></div><div class="rcard-body">
+        <h3>Risk Factors</h3>
+        ${rc.risks.map(r=>`<div class="callout ${r.severity==='HIGH'?'callout-red':r.severity==='MEDIUM'?'callout-yellow':'callout-blue'}">
+            <h4>${r.factor} <span class="badge ${r.severity==='HIGH'?'badge-red':r.severity==='MEDIUM'?'badge-yellow':'badge-green'}">${r.severity}</span></h4><p>${r.detail}</p></div>`).join('')}
+        <h3>Confidence: ${rc.confidence.level}</h3>
+        <div class="conf-bar-wrap"><div class="conf-bar"><div class="conf-fill" style="width:${rc.confidence.percent}%;background:${rc.confidence.level==='HIGH'?'var(--success)':rc.confidence.level==='MEDIUM'?'var(--warning)':'var(--danger)'}"></div></div><span style="font-weight:700">${rc.confidence.percent}%</span></div>
+        <p>Data completeness: ${rc.confidence.data_completeness}%</p>
+    </div></div>`;
 
-        // 1. Sale Probability
-        +'<div class="rcard"><div class="rcard-head"><div class="rcard-num">1</div><div class="rcard-title">Multi-Horizon Sale Probability</div></div>'
-        +'<div class="rcard-body">'
-        +'<div class="prob-row"><div class="prob-label">30 Days</div><div class="prob-bar-bg"><div class="prob-bar '+(sp.prob_30_day>50?'prob-green':sp.prob_30_day>30?'prob-yellow':'prob-red')+'" style="width:'+sp.prob_30_day+'%">'+sp.prob_30_day+'%</div></div></div>'
-        +'<div class="prob-row"><div class="prob-label">60 Days</div><div class="prob-bar-bg"><div class="prob-bar '+(sp.prob_60_day>60?'prob-green':sp.prob_60_day>40?'prob-yellow':'prob-red')+'" style="width:'+sp.prob_60_day+'%">'+sp.prob_60_day+'%</div></div></div>'
-        +'<div class="prob-row"><div class="prob-label">90 Days</div><div class="prob-bar-bg"><div class="prob-bar '+(sp.prob_90_day>70?'prob-green':sp.prob_90_day>50?'prob-yellow':'prob-red')+'" style="width:'+sp.prob_90_day+'%">'+sp.prob_90_day+'%</div></div></div>'
-        +curveHtml
-        +insightsHtml
-        +'<div class="callout callout-blue"><h4>Key Drivers</h4><ul>'
-        +sp.factors_30.concat(sp.factors_60).concat(sp.factors_90).map(function(f){return '<li>'+f+'</li>'}).join('')
-        +'</ul></div>'
-        +'</div></div>'
-
-        // 2. Aging
-        +'<div class="rcard"><div class="rcard-head"><div class="rcard-num">2</div><div class="rcard-title">Inventory Velocity & Aging Risk</div></div>'
-        +'<div class="rcard-body">'
-        +'<p>Aging Zone: <span class="badge '+zoneBadge+'">'+ag.zone+'</span> — '+ag.zone_detail+'</p>'
-        +'<table class="rtable"><thead><tr><th>Scenario</th><th>+Days</th><th>Total</th><th>Floorplan</th><th>Gross (Sticker)</th><th>Realistic Gross</th></tr></thead><tbody>'
-        +ag.erosion_table.map(function(r,i){
-            return '<tr><td>'+(i===0?'<strong>Today</strong>':'+'+r.additional_days+'d')+'</td><td>'+r.additional_days+'</td><td>'+r.total_days+'</td><td>'+fm(r.floorplan_accrued)+'</td><td>'+fm(r.gross_at_sticker)+'</td><td>'+fm(r.realistic_gross_low)+' – '+fm(r.realistic_gross_high)+'</td></tr>';
-        }).join('')
-        +'</tbody></table>'
-        +'<div class="callout callout-red"><h4>Irrationality Threshold: Day '+ag.irrationality_threshold.day+'</h4><p>'+ag.irrationality_threshold.explanation+'</p></div>'
-        +'</div></div>'
-
-        // 3. Pricing
-        +'<div class="rcard"><div class="rcard-head"><div class="rcard-num">3</div><div class="rcard-title">Pricing Strategy</div></div>'
-        +'<div class="rcard-body">'
-        +'<div class="rec-box">'
-        +'<div class="rec-action">'+(p.action==='REDUCE'?'↓ REDUCE BY '+fm(p.change_amount):p.action==='INCREASE'?'↑ INCREASE BY '+fm(p.change_amount):'● HOLD PRICE')+'</div>'
-        +'<div class="rec-detail">'+(p.action!=='HOLD'?'New Price: <strong>'+fm(p.new_list_price)+'</strong> (from '+fm(p.current_list_price)+')':'Maintain at <strong>'+fm(p.current_list_price)+'</strong>')+'</div>'
-        +'<div class="rec-sub">'+p.timing+'</div>'
-        +'</div>'
-        +'<p>'+p.reasoning+'</p>'
-        +'<div class="callout callout-blue"><h4>Elasticity: '+p.elasticity.level+'</h4><p>'+p.elasticity.detail+'</p></div>'
-        +(p.probability_impact?'<div class="callout callout-green"><h4>Expected Impact</h4><p>'+p.probability_impact.explanation+'</p></div>':'')
-        +'<h3>Expected Outcome</h3>'
-        +'<p>Transaction: <strong>'+fm(p.expected_transaction_range.low)+' – '+fm(p.expected_transaction_range.high)+'</strong></p>'
-        +'<p>Gross: <strong>'+fm(p.expected_gross_range.low)+' – '+fm(p.expected_gross_range.high)+'</strong></p>'
-        +'</div></div>'
-
-        // 4. Exit Path
-        +'<div class="rcard"><div class="rcard-head"><div class="rcard-num">4</div><div class="rcard-title">Optimal Exit Path</div></div>'
-        +'<div class="rcard-body">'
-        +'<div class="exit-grid">'
-        +ep.paths.map(function(path){
-            return '<div class="exit-card '+(path.recommended?'rec':'')+'">'
-                +(path.recommended?'<div class="rec-label">RECOMMENDED</div>':'')
-                +'<h4>'+path.path.replace('_',' ')+'</h4>'
-                +'<div class="exit-gross '+(path.recommended?'green':'')+'">'+fm(path.expected_gross_low)+(path.expected_gross_high!==path.expected_gross_low?' – '+fm(path.expected_gross_high):'')+'</div>'
-                +'<div class="exit-time">'+path.expected_days+'</div>'
-                +'<div style="font-size:12px;color:var(--text-muted);margin-top:8px">'+path.probability+'</div>'
-                +'</div>';
-        }).join('')
-        +'</div>'
-        +'<p>'+ep.reasoning+'</p>'
-        +'<div class="callout callout-yellow"><h4>Decision Trigger</h4><p>'+ep.decision_trigger.condition+'</p></div>'
-        +'</div></div>'
-
-        // 5. Action Plan
-        +'<div class="rcard"><div class="rcard-head"><div class="rcard-num">5</div><div class="rcard-title">Dealer Action Plan — This Week</div></div>'
-        +'<div class="rcard-body">'
-        +a.action_plan.map(function(act){
-            return '<div class="action-item">'
-                +'<div class="action-num">'+act.priority+'</div>'
-                +'<div class="action-content">'
-                +'<div class="action-timing">'+act.timing+'</div>'
-                +'<h4>'+act.title+'</h4>'
-                +'<p>'+act.detail+'</p>'
-                +'<p style="margin-top:6px;font-style:italic"><strong>Purpose:</strong> '+act.purpose+'</p>'
-                +'</div></div>';
-        }).join('')
-        +'</div></div>'
-
-        // 6. Risk
-        +'<div class="rcard"><div class="rcard-head"><div class="rcard-num">6</div><div class="rcard-title">Risk & Confidence</div></div>'
-        +'<div class="rcard-body">'
-        +'<h3>Risk Factors</h3>'
-        +rc.risks.map(function(r){
-            return '<div class="callout '+(r.severity==='HIGH'?'callout-red':r.severity==='MEDIUM'?'callout-yellow':'callout-blue')+'">'
-                +'<h4>'+r.factor+' <span class="badge '+(r.severity==='HIGH'?'badge-red':r.severity==='MEDIUM'?'badge-yellow':'badge-green')+'">'+r.severity+'</span></h4>'
-                +'<p>'+r.detail+'</p></div>';
-        }).join('')
-        +'<h3>Confidence: '+rc.confidence.level+'</h3>'
-        +'<div style="display:flex;align-items:center;gap:12px;margin:16px 0">'
-        +'<div class="conf-bar"><div class="conf-fill" style="width:'+rc.confidence.percent+'%;background:'+(rc.confidence.level==='HIGH'?'var(--success)':rc.confidence.level==='MEDIUM'?'var(--warning)':'var(--danger)')+'"></div></div>'
-        +'<span style="font-weight:700">'+rc.confidence.percent+'%</span>'
-        +'</div>'
-        +'<p>Data completeness: '+rc.confidence.data_completeness+'%</p>'
-        +'</div></div>'
-
-        +'<div class="timestamp">Analysis generated '+new Date().toLocaleString()+' — Vehicle Inventory Intelligence v2.0</div>';
+    html+=`<div class="timestamp">Analysis generated ${new Date().toLocaleString()} — Vehicle Inventory Intelligence v2.0</div>`;
 
     document.getElementById('reportSection').innerHTML=html;
 
-    // Attach chart hover events
-    setTimeout(function(){
-        var container=document.getElementById('chartContainer');
-        var tooltip=document.getElementById('chartTooltip');
-        if(container&&tooltip){
-            var bars=container.querySelectorAll('rect[data-day]');
-            bars.forEach(function(bar){
-                bar.style.cursor='crosshair';
-                bar.addEventListener('mouseenter',function(e){
-                    var day=bar.getAttribute('data-day');
-                    var daily=bar.getAttribute('data-daily');
-                    var cum=bar.getAttribute('data-cum');
-                    tooltip.innerHTML='<strong>Day '+day+'</strong><br>Daily: '+daily+'%<br>Cumulative: '+cum+'%';
-                    tooltip.style.display='block';
-                });
-                bar.addEventListener('mousemove',function(e){
-                    var rect=container.getBoundingClientRect();
-                    tooltip.style.left=(e.clientX-rect.left+15)+'px';
-                    tooltip.style.top=(e.clientY-rect.top-10)+'px';
-                });
-                bar.addEventListener('mouseleave',function(){
-                    tooltip.style.display='none';
-                });
-            });
-        }
-    },100);
+    // Draw chart after DOM update
+    if(sp.daily_curve&&sp.daily_curve.length>0){
+        setTimeout(()=>drawProbChart(sp.daily_curve,d.days_in_inventory),100);
+    }
+}
+
+// ============================================================
+// DAILY PROBABILITY CHART (Canvas)
+// ============================================================
+function drawProbChart(curve,currentDay){
+    const canvas=document.getElementById('probChart');
+    if(!canvas)return;
+    const container=document.getElementById('chartContainer');
+    const tooltip=document.getElementById('chartTooltip');
+    const ctx=canvas.getContext('2d');
+
+    // Set canvas size
+    const rect=container.getBoundingClientRect();
+    canvas.width=rect.width;
+    canvas.height=rect.height;
+    const W=canvas.width,H=canvas.height;
+    const pad={top:30,right:30,bottom:40,left:60};
+    const cW=W-pad.left-pad.right;
+    const cH=H-pad.top-pad.bottom;
+
+    // Find max values
+    const maxDaily=Math.max(...curve.map(p=>p.daily_probability),1);
+    const maxCum=Math.max(...curve.map(p=>p.cumulative_probability),10);
+
+    // Clear
+    ctx.clearRect(0,0,W,H);
+
+    // Grid
+    ctx.strokeStyle='rgba(45,62,80,0.5)';ctx.lineWidth=1;
+    for(let i=0;i<=5;i++){
+        const y=pad.top+(cH/5)*i;
+        ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(W-pad.right,y);ctx.stroke();
+    }
+
+    // X axis labels
+    ctx.fillStyle='#b2bec3';ctx.font='11px Segoe UI';ctx.textAlign='center';
+    [1,10,20,30,40,50,60,70,80,90].forEach(day=>{
+        const x=pad.left+((day-1)/89)*cW;
+        ctx.fillText('D'+day,x,H-10);
+    });
+
+    // Y axis labels (cumulative)
+    ctx.textAlign='right';
+    for(let i=0;i<=5;i++){
+        const val=Math.round(maxCum/5*(5-i));
+        const y=pad.top+(cH/5)*i;
+        ctx.fillText(val+'%',pad.left-8,y+4);
+    }
+
+    // Draw cumulative area
+    ctx.beginPath();
+    ctx.moveTo(pad.left,pad.top+cH);
+    curve.forEach((p,i)=>{
+        const x=pad.left+(i/89)*cW;
+        const y=pad.top+cH-(p.cumulative_probability/maxCum)*cH;
+        ctx.lineTo(x,y);
+    });
+    ctx.lineTo(pad.left+(89/89)*cW,pad.top+cH);
+    ctx.closePath();
+    ctx.fillStyle='rgba(0,184,148,0.1)';ctx.fill();
+
+    // Draw cumulative line
+    ctx.beginPath();
+    curve.forEach((p,i)=>{
+        const x=pad.left+(i/89)*cW;
+        const y=pad.top+cH-(p.cumulative_probability/maxCum)*cH;
+        i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    });
+    ctx.strokeStyle='#00b894';ctx.lineWidth=2;ctx.stroke();
+
+    // Draw daily bars
+    const barW=Math.max(2,cW/90-1);
+    curve.forEach((p,i)=>{
+        if(p.daily_probability<=0)return;
+        const x=pad.left+(i/89)*cW-barW/2;
+        const barH=(p.daily_probability/maxDaily)*cH*0.6;
+        const y=pad.top+cH-barH;
+        ctx.fillStyle=i<currentDay?'rgba(233,69,96,0.2)':'rgba(233,69,96,0.6)';
+        ctx.fillRect(x,y,barW,barH);
+    });
+
+    // Current day marker
+    if(currentDay>0&&currentDay<=90){
+        const cx=pad.left+((currentDay-1)/89)*cW;
+        ctx.beginPath();ctx.moveTo(cx,pad.top);ctx.lineTo(cx,pad.top+cH);
+        ctx.strokeStyle='rgba(253,203,110,0.7)';ctx.lineWidth=2;ctx.setLineDash([5,5]);ctx.stroke();ctx.setLineDash([]);
+        ctx.fillStyle='#fdcb6e';ctx.font='bold 11px Segoe UI';ctx.textAlign='center';
+        ctx.fillText('TODAY (Day '+currentDay+')',cx,pad.top-8);
+    }
+
+    // Hover interaction
+    container.onmousemove=function(e){
+        const r=canvas.getBoundingClientRect();
+        const mx=e.clientX-r.left;
+        const dayIndex=Math.round(((mx-pad.left)/cW)*89);
+        if(dayIndex>=0&&dayIndex<curve.length){
+            const pt=curve[dayIndex];
+            document.getElementById('ttDay').textContent='Day '+pt.day;
+            document.getElementById('ttDaily').textContent=pt.daily_probability+'%';
+            document.getElementById('ttCum').textContent=pt.cumulative_probability+'%';
+            tooltip.style.display='block';
+            let tx=mx+15,ty=e.clientY-r.top-60;
+            if(tx+200>W)tx=mx-200;
+            if(ty<0)ty=10;
+            tooltip.style.left=tx+'px';tooltip.style.top=ty+'px';
+        }else{tooltip.style.display='none'}
+    };
+    container.onmouseleave=function(){tooltip.style.display='none'};
 }
 </script>
 </body>
